@@ -1,0 +1,53 @@
+<style>
+  .highlight {
+    background-color: yellow;
+    background-color: yellow;
+    padding: 10px;
+    border: 1px solid black;
+  }
+</style>
+
+<div class="container py-4">
+  <h2 class="mb-3">Liste des événements</h2>
+
+  <!-- Recherche -->
+  <input
+    id="search"
+    type="text"
+    class="form-control mb-4"
+    placeholder="Rechercher un événement"
+    (input)="filter()"
+  />
+
+  <div class="row g-3">
+    @for (event of events; track $index) {
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ event.imageUrl }}"
+          class="card-img-top img-fluid"
+          style="height: 200px; object-fit: cover"
+        />
+
+        <div class="card-body">
+          <h5 class="card-title" appHighlight>{{ event.title | uppercase }}</h5>
+          <p class="text-muted">{{ event.description }}</p>
+          <p>{{ event.date | date }}</p>
+          <p class="fw-bold">{{ event.nbPlaces }} places</p>
+          <p>{{ event.price | currency }} TND</p>
+
+          <!-- Bouton Like -->
+          <button
+            class="btn btn-sm btn-primary"
+            (click)="likeEvent(event)"
+            [disabled]="event.date <= today()"
+          >
+            👍 Like
+          </button>
+          <span class="ms-2">{{ event.nbLikes }}</span>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
