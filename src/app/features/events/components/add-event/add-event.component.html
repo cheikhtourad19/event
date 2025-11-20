@@ -1,0 +1,130 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Ajouter un événement</h2>
+
+  <form [formGroup]="addEventForm" (ngSubmit)="onSubmit()">
+    <!-- Titre -->
+    <div class="mb-3">
+      <label class="form-label">Titre</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="titre"
+        placeholder="Titre de l'événement"
+      />
+      <div
+        class="text-danger mt-1"
+        *ngIf="
+          addEventForm.get('titre')?.invalid &&
+          addEventForm.get('titre')?.touched
+        "
+      >
+        Le titre doit contenir au moins 5 lettres et uniquement des lettres.
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        rows="3"
+        formControlName="description"
+        placeholder="Décrivez votre événement"
+      ></textarea>
+      <div
+        class="text-danger mt-1"
+        *ngIf="
+          addEventForm.get('description')?.invalid &&
+          addEventForm.get('description')?.touched
+        "
+      >
+        La description doit contenir au moins 30 caractères.
+      </div>
+    </div>
+
+    <!-- Date -->
+    <div class="mb-3">
+      <label class="form-label">Date</label>
+      <input type="date" class="form-control" formControlName="date" />
+      <div
+        class="text-danger mt-1"
+        *ngIf="
+          addEventForm.get('date')?.invalid && addEventForm.get('date')?.touched
+        "
+      >
+        La date doit être dans le futur (au moins 7 jours à partir
+        d'aujourd'hui).
+      </div>
+    </div>
+
+    <!-- Prix -->
+    <div class="mb-3">
+      <label class="form-label">Prix (DT)</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="prix"
+        placeholder="Prix en dinars"
+      />
+      <div
+        class="text-danger mt-1"
+        *ngIf="
+          addEventForm.get('prix')?.invalid && addEventForm.get('prix')?.touched
+        "
+      >
+        Le prix doit être un nombre valide.
+      </div>
+    </div>
+
+    <!-- Nombre de places -->
+    <div class="mb-3">
+      <label class="form-label">Nombre de places</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="nbPlaces"
+        placeholder="Entre 1 et 100"
+      />
+      <div
+        class="text-danger mt-1"
+        *ngIf="
+          addEventForm.get('nbPlaces')?.invalid &&
+          addEventForm.get('nbPlaces')?.touched
+        "
+      >
+        Entrez un nombre entre 1 et 100.
+      </div>
+    </div>
+
+    <!-- Lieu -->
+    <div class="mb-3">
+      <label class="form-label">Lieu</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="lieu"
+        placeholder="Lieu de l'événement"
+      />
+    </div>
+
+    <!-- Image URL -->
+    <div class="mb-3">
+      <label class="form-label">Image</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="imageUrl"
+        placeholder="URL de l'image (optionnel)"
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="btn btn-primary w-100"
+      [disabled]="addEventForm.invalid"
+    >
+      Ajouter l'événement
+    </button>
+  </form>
+</div>

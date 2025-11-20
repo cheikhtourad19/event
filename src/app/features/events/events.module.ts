@@ -7,7 +7,8 @@ import { EventDetailComponent } from './pages/event-detail/event-detail.componen
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ListEventsComponent } from './pages/list-events/list-events.component';
-
+import { AddEventComponent } from './components/add-event/add-event.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,9 @@ import { ListEventsComponent } from './pages/list-events/list-events.component';
     EventDetailComponent,
     EventCardComponent,
     SearchBarComponent,
-    ListEventsComponent
+    ListEventsComponent,
+    AddEventComponent,
   ],
-  imports: [
-    CommonModule,
-    EventsRoutingModule
-  ]
+  imports: [CommonModule, EventsRoutingModule, ReactiveFormsModule],
 })
-export class EventsModule { }
+export class EventsModule {}

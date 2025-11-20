@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Angular Conference",
+    "description": "A conference about Angular framework.",
+    "date": "2024-09-15",
+    "place": "New York",
+    "price": 99.99,
+    "orginzerId": 1,
+    "imageUrl": "/images/people-taking-part-high-protocol-event.jpg",
+    "nbPlaces": 200,
+    "nbLikes": 150
+  },
+
+  {
+    "id": 2,
+    "title": "JavaScript Meetup",
+    "description": "A meetup for JavaScript enthusiasts.",
+    "date": "2026-10-20",
+    "place": "San Francisco",
+    "price": 0,
+    "orginzerId": 2,
+    "imageUrl": "/images/people-taking-part-high-protocol-event.jpg",
+    "nbPlaces": 100,
+    "nbLikes": 80
+  },
+  {
+    "id": 3,
+    "title": "JavaScript Meetup",
+    "description": "A meetup for JavaScript enthusiasts.",
+    "date": "2026-10-20",
+    "place": "San Francisco",
+    "price": 0,
+    "orginzerId": 2,
+    "imageUrl": "/images/people-taking-part-high-protocol-event.jpg",
+    "nbPlaces": 100,
+    "nbLikes": 80
+  },
+  {
+    "id": 4,
+    "title": "JavaScript Meetup",
+    "description": "A meetup for JavaScript enthusiasts.",
+    "date": "2026-10-20",
+    "place": "San Francisco",
+    "price": 0,
+    "orginzerId": 2,
+    "imageUrl": "/images/people-taking-part-high-protocol-event.jpg",
+    "nbPlaces": 100,
+    "nbLikes": 80
+  }
+]
