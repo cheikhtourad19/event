@@ -1,5 +1,5 @@
 pipeline {
-    agent :{ label 'slave_build_angular' }
+    agent { label 'slave_build_angular' }
 
     tools {
         nodejs 'node'
