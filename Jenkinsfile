@@ -14,6 +14,15 @@ pipeline {
             }
         }
 
+        stage('Check Node Version') {
+            steps {
+                sh 'node --version'
+                sh 'npm --version'
+                sh 'echo "Node path: $(which node)"'
+                sh 'echo "NPM path: $(which npm)"'
+            }
+        }
+
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
@@ -30,6 +39,8 @@ pipeline {
     post {
         success {
             echo '✅ Build Angular réussi'
+            // Optionally archive the build output
+            archiveArtifacts artifacts: 'dist/**', fingerprint: true
         }
         failure {
             echo '❌ Échec du build'
